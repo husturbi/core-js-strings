@@ -38,7 +38,7 @@ function getStringLength(value) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return typeof value === 'string';
+  return typeof value === 'string' || value instanceof String;
 }
 
 /**
@@ -186,7 +186,7 @@ function removeLastOccurrences(str, value) {
  */
 function sumOfCodes(str) {
   let sum = 0;
-  if (str === true) {
+  if (typeof str === 'string') {
     for (let i = 0; i < str.length; i += 1) {
       sum += str.charCodeAt(i);
     }
